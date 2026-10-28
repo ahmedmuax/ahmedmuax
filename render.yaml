@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: invoice-studio
+    runtime: node
+    plan: free
+    buildCommand: node --check server.js && node --check app.js
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
